@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>myshortname</short-name>
+    <uri>http://mycompany.com</uri>
+
+    <hibernate-mapping>
+        <class name=«logic.Bus» table=«busses»>
+        <id column=«bus_id» name=«id» type=«java.lang.Long»>
+        <generator class=«increment»/>
+    </id>
+    <property column=«number» name=«number» type=«java.lang.String»/>
+
+    <set name=«drivers» table=«busDriver» lazy=«false»>
+    <key column=«bus_id»/>
+    <many-to-many column=«driver_id» class=«logic.Driver»/>
+</set>
+
+        </class>
+        </hibernate-mapping>* This source code was highlighted with Source Code Highlighter.
+
+    <!-- Invoke 'Generate' action to add tags or functions -->
+
+</taglib>
